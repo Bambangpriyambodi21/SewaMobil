@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\M_Peminjaman;
-use App\Models\M_Mobil;
 use Exception;
 use DateTime;
 
@@ -60,7 +59,6 @@ class PeminjamanController extends Controller
         }
         if($bool == true){
             M_Peminjaman::insert($data);
-            M_Mobil::where('model', $request->mobil)->update(['ketersediaan' => 'tidak tersedia']);
         }else{
             throw new Exception( "Tanggal berada di luar rentang waktu yang diperbolehkan.");
         }
