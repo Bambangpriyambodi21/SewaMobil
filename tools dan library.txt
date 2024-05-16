@@ -1,0 +1,4 @@
+IDE : Visual Studio Code
+Database : MySQL
+Framework : Laravel, Bootstrap
+Bahasa Pemrograman : HTML, JavaScript, PHP, CSS 
