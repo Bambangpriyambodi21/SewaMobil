@@ -1,13 +1,13 @@
-@extends('layouts.default')
+@extends('layouts.app')
 
 @section('content')
-    <section>
-        <div class="container mt-5">
-            <h1>Edit Mobil</h1>
-            <div class="row">
-                <div class="col-lg-8">
-                    <form action="{{ url('/updateMobil/' . $data->id) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
+<section>
+    <div class="container ">
+        <h1>Edit Mobil</h1>
+        <div class="row">
+            <div class="col-lg-8">
+                <form action="{{ url('/updateMobil/' . $data->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-grup">
                         <label for="nama">Merek *</label>
                         <input type="text" name="merek" class="form-control" value="{{ $data->merek }}">
@@ -40,8 +40,8 @@
                         <a href="{{ url('/indexMobil') }}">Kembali ke halaman utama</a>
                     </div>
                 </form>
-                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 @endsection

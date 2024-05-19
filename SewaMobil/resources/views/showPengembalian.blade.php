@@ -1,13 +1,13 @@
-@extends('layouts.default')
+@extends('layouts.app')
 
 @section('content')
-    <section>
-        <div class="container mt-5">
-            <h1>Edit Pengembalian</h1>
-            <div class="row">
-                <div class="col-lg-8">
-                    <form action="{{ url('/updatePengembalian/' . $data->id) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
+<section>
+    <div class="container ">
+        <h1>Edit Pengembalian</h1>
+        <div class="row">
+            <div class="col-lg-8">
+                <form action="{{ url('/updatePengembalian/' . $data->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-grup">
                         <label for="nama">ID Pengguna *</label>
                         <input type="text" name="id_pengguna" class="form-control" value="{{ $data->id_pengguna }}" readonly>
@@ -33,15 +33,15 @@
                         <a href="{{ url('/indexPengembalian') }}">Kembali ke halaman utama</a>
                     </div>
                     <script>
-    document.getElementById('jml_hari').addEventListener('input', function() {
-        var jml_hari = parseFloat(this.value);
-        var tarif = parseFloat("{{ $data->tarif }}");
-        document.getElementById('jml_harga').value = jml_hari * tarif;
-    });
-</script>
+                        document.getElementById('jml_hari').addEventListener('input', function() {
+                            var jml_hari = parseFloat(this.value);
+                            var tarif = parseFloat("{{ $data->tarif }}");
+                            document.getElementById('jml_harga').value = jml_hari * tarif;
+                        });
+                    </script>
                 </form>
-                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 @endsection

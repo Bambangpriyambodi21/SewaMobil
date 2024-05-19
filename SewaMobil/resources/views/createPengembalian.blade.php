@@ -1,13 +1,13 @@
-@extends('layouts.default')
+@extends('layouts.app')
 
 @section('content')
-    <section>
-        <div class="container mt-5">
-            <h1>Tambah Pengembalian</h1>
-            <div class="row">
-                <div class="col-lg-8">
-                    <form action="{{ url('/storePengembalian') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
+<section>
+    <div class="container ">
+        <h1>Tambah Pengembalian</h1>
+        <div class="row">
+            <div class="col-lg-8">
+                <form action="{{ url('/storePengembalian') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-grup">
                         <label for="nama">ID Pengguna *</label>
                         <input type="text" name="id_pengguna" class="form-control">
@@ -25,8 +25,8 @@
                         <a href="{{ url('/indexPengembalian') }}">Kembali ke halaman utama</a>
                     </div>
                 </form>
-                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 @endsection
